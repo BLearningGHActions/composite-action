@@ -7,3 +7,10 @@ jobs:
   compile_stats:
     runs-on: ubuntu-latest
     name: Repository statistics
+    steps:
+      -uses: actions/checkout@v4
+
+      -uses: BLearningGHActions/composite-action@main
+       id: stats_results
+       with:
+         from-date: '2024-01-01'
