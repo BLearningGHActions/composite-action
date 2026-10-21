@@ -1,0 +1,9 @@
+name: "Compile statistics"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  compile_stats:
+    runs-on: ubuntu-latest
+    name: Repository statistics
