@@ -19,12 +19,12 @@ runs:
         #Fetch commit stats
         ## Source: https://gist.github.com/eyecatchup/3fb7e0c0cbdb72412fc
         CHANGES="$(git log --pretty=format: --numstat --since=$FROM_DATE | awk '{
-          inserted+=$1; 
-          deleted+=$2; 
-          delta+=$1-$2; 
-          ratio=deleted/inserted 
+          inserted += $1; 
+          deleted += $2; 
+          delta += $1 - $2; 
+          ratio = deleted/inserted 
         } END {
-            printf "Commit stats:\n- Lines added (total) .... %s\n= Lines deleted (total) .. %s\n- Total lines (delta) .... %s\n- Add./Del. ratio (1:n)."
+            printf "Commit stats:\n- Lines added (total) .... %s\n= Lines deleted (total) .. %s\n- Total lines (delta) .... %s\n- Add./Del. ratio (1:n). %.2f\n", inserted, deleted, delta, ratio
         }')"
 
         #Print output
