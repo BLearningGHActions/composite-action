@@ -21,6 +21,6 @@ runs:
 
         #Print output
         echo "$CHANGES"
-     shell: bash
-     env: 
-       FROM_DATE: ${{ inputs.from-date}}
+    shell: bash
+    env: 
+      FROM_DATE: ${{ inputs.from-date}}
